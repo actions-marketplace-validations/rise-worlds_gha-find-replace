@@ -4,7 +4,10 @@ on:
     types: [published]
 jobs:
   update:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
     steps:
@@ -15,7 +18,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          name: jacobtomlinson/gha-find-replace
+          name: riseworlds/gha-find-replace
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: ghcr.io
