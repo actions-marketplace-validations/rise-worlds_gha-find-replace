@@ -20,3 +20,5 @@ jobs:
         run: |
           go get -d -v
           go build -v .
+        env:
+          GOPROXY: https://goproxy.cn
