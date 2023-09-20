@@ -18,7 +18,7 @@ jobs:
       - name: Publish to Registry
         uses: elgohr/Publish-Docker-Github-Action@v5
         with:
-          name: rise-worlds/gha-find-replace
+          name: rise-worlds/gha-find-replace-${{ matrix.os }}
           username: ${{ github.actor }}
           password: ${{ secrets.GIT_HUB_TOKEN }}
           registry: ghcr.io
