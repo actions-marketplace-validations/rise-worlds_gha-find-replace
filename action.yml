@@ -1,6 +1,6 @@
 name: "Find and Replace"
 description: "Find and replace a string in your project files"
-author: "Jacob Tomlinson"
+author: "Rise Worlds"
 inputs:
   include:
     description: "A glob of files to include in our find and replace"
